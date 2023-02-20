@@ -8,9 +8,6 @@ const authUser = require('../../core/auth/auth')
 router.post('/items', authUser(),(req, res) => {
   // console.log('req file > ', req.file);
   upload(req, res, async (err) => {
-    console.log('req >> ', req.fileValidation);
-    console.log('err nya >', err);
-
     if (err) {
       res.json({
         message: "File above 100kb!"

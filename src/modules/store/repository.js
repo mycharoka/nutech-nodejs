@@ -31,7 +31,6 @@ async function deleteQuery(params) {
   const values = [params]
   try {
     const result = await pool.query(query, values)
-    console.log('res >> ', result);
     if (result.rows.length > 1) {
       return {
         message: "Deleted!"

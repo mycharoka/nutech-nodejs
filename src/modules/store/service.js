@@ -1,9 +1,6 @@
 const repo = require('./repository')
 
 async function save(body, file) {
-  console.log('body > ', body);
-  console.log('file di service > ', file);
-  
   const saveData = {
     nama_barang: body.nama_barang,
     harga_beli: parseInt(body.harga_beli),
@@ -16,7 +13,6 @@ async function save(body, file) {
   }
 
   try {
-    console.log('save data >> ', saveData);
     const store = await repo.storeQuery(body, savePhoto)
     console.log(store);
     if (store) return {
